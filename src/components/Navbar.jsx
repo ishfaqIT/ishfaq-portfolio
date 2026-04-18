@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,10 +14,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [menuOpen]);
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled glass-panel' : ''}`}>
       <div className="nav-container">
-        <a href="#hero" className="logo orbitron text-gradient">IAM<span style={{ color: "var(--neon-green)" }}>.</span></a>
+        <a href="#hero" className="logo">
+          <img src={logo} alt="Logo" className="nav-logo" />
+        </a>
         
         <div className={`nav-links ${menuOpen ? 'open glass-panel' : ''}`}>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
