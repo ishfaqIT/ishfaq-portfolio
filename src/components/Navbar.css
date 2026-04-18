@@ -1,0 +1,97 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  padding: 1rem 5%;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a:not(.nav-contact-btn) {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-links a:not(.nav-contact-btn)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--electric-blue);
+  box-shadow: 0 0 8px var(--electric-blue);
+  transition: width 0.3s;
+}
+
+.nav-links a:not(.nav-contact-btn):hover {
+  color: var(--electric-blue);
+  text-shadow: 0 0 8px var(--electric-blue-glow);
+}
+
+.nav-links a:not(.nav-contact-btn):hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--electric-blue);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    clip-path: circle(0px at top right);
+    transition: all 0.4s ease-in-out;
+    background: var(--bg-color-glass);
+    border: none;
+  }
+  
+  .nav-links.open {
+    clip-path: circle(150% at top right);
+    border-bottom: 1px solid var(--electric-blue);
+  }
+}

@@ -1,0 +1,107 @@
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--electric-blue), var(--cyber-purple));
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  box-shadow: 0 0 10px var(--electric-blue-glow);
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -20px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  top: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -20px;
+}
+
+.timeline-content {
+  padding: 20px 30px;
+  position: relative;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.timeline-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.timeline-date {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(155, 89, 182, 0.1);
+  color: var(--cyber-purple);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline-container::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0%;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 11px;
+  }
+}

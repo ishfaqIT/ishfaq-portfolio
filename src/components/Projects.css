@@ -1,0 +1,62 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.project-desc {
+  flex-grow: 1;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tech-pill {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(155, 89, 182, 0.1);
+  color: var(--cyber-purple);
+  border: 1px solid rgba(155, 89, 182, 0.3);
+  border-radius: 20px;
+  font-family: var(--font-heading);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  align-self: flex-start;
+}
