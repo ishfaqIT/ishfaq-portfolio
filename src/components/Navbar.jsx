@@ -15,10 +15,13 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    const mainContent = document.querySelector('main');
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
+      if (mainContent) mainContent.classList.add('content-blur');
     } else {
       document.body.style.overflow = 'unset';
+      if (mainContent) mainContent.classList.remove('content-blur');
     }
   }, [menuOpen]);
 

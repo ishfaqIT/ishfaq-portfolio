@@ -24,6 +24,15 @@ html {
   scroll-padding-top: 80px;
 }
 
+main {
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-blur {
+  filter: blur(10px);
+  pointer-events: none;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
